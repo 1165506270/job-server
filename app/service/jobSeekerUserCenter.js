@@ -1,8 +1,8 @@
 
 const Service = require('egg').Service;
 
-class UserService extends Service {
-    async find(username) {
+class JobSeekerUserCenterService extends Service {
+    async userfind(username) {
       // 假如 我们拿到用户 id 从数据库获取用户详细信息
       const result = await this.app.mysql.select('USERLIST');
 
@@ -12,4 +12,4 @@ class UserService extends Service {
     }
   }
 
-module.exports = UserService;
+module.exports = JobSeekerUserCenterService;
