@@ -7,13 +7,18 @@ class HomeController extends Controller {
     this.ctx.body = 'hi, egg';
   }
   async login() {
-    const body = this.ctx.request.body
-    console.log(body)
+    const body = this.ctx.request.body;
+    console.log(body);
     const user = await this.ctx.service.user.find(body.user);
     this.ctx.body = {
       code: 200,
-      user
-    }
+      user,
+    };
+  }
+  async register() {
+    const body = this.ctx.request.body;
+    const user = await this.ctx.service.user.register(body);
+    this.ctx.body = user;
   }
 }
 
